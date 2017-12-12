@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import net.suntrans.study.data.PlanData;
 
@@ -34,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg);
         view2.setContentBitmap(bitmap);
         view2.setmDatas(datas);
+        view2.setElementsClickListener(new PlanView2.onElementsClickListener() {
+            @Override
+            public void onElementClick(PlanData data) {
+                Toast.makeText(MainActivity.this.getApplicationContext(),data.x+","+data.y,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }
