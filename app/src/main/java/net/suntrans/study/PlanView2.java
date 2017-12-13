@@ -210,7 +210,6 @@ public class PlanView2 extends View {
         public boolean onScale(ScaleGestureDetector detector) {
             mScaleFactor *= detector.getScaleFactor();
 
-            System.out.println("onScale="+mScaleFactor);
             // Don't let the object get too small or too large.
             mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 5.0f));
 
@@ -248,5 +247,6 @@ public class PlanView2 extends View {
     public interface onElementsClickListener {
         void onElementClick(PlanData data);
     }
+
 
 }
